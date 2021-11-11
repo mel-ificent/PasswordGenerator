@@ -16,8 +16,18 @@ function generatePassword(){
     else {
         passwordCriteria[0] = passwordLength;
 
-        var passwordLength = prompt("Would you like to include lowercase characters? (Please type 'yes' or 'no')");
+        var passwordNumeric = confirm("Click OK to confirm including numeric characters.");
+        passwordCriteria[1] = passwordNumeric;
+
+        var passwordSpecial= confirm("Click OK to confirm including special characters.");
+        passwordCriteria[2] = passwordSpecial;
+        var passwordLowerCase = confirm("Click OK to confirm including lowercase characters.");
+        passwordCriteria[3] = passwordLowerCase;
+
+        var passwordUpperCase = confirm("Click OK to confirm including uppercase characters.");
+        passwordCriteria[4] = passwordUpperCase;
     }
+
 }
 
 // Write password to the #password input

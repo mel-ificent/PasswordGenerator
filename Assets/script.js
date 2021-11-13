@@ -39,8 +39,8 @@ function generatePassword(){
         }
     }
 
-    //For loop to generate a password character for the length of the password defined by the user
-    //In the loop we have a series of if statements to determine a valid set of values that can be used for each character of the password based on the user's criteria
+//For loop to generate a password character for the length of the password defined by the user
+//In the loop we have a series of if statements to determine a valid set of values that can be used for each character of the password based on the user's criteria
     var z = 0;
     for(i=0; i<passwordCriteria[0]; i++){
     if(passwordCriteria[1]){
@@ -64,12 +64,11 @@ function generatePassword(){
         characterOption.push(character.charAt(Math.floor(Math.random() * character.length)).toUpperCase());
 
      }
-    //Once we have the list of possible password character values, we are going to pick one of the values at random and add it to our password array
+    //Once we have a list of possible password character values, we are going to pick one of the values at random and add it to our password array
     //However, we need to make sure that at least one character of the password meets each user requirement
-     
+    //this first if statement forces the password to have at least one of the criteria characters in the 2nd-5th characters of the password (the first character is still random)
     if (z>0 && z<5){
         passwordArray.push(characterOption[z]);
-        console.log(z);
     }
     else{
         var x = Math.floor((Math.random() * characterOption.length));
